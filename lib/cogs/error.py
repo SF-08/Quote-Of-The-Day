@@ -1,4 +1,4 @@
-import discird
+import discord
 from discord.ext import commands
 
 class Errors(commands.Cog):
