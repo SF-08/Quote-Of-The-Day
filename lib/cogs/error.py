@@ -28,10 +28,10 @@ class Errors(commands.Cog):
                     
                 await ctx.send(f"Slow down {ctx.author.mention}! {value}")
                 
-            elif isinstance(error, commands.CommandsNotFound):
-                pass
-            
-            else:
+        elif isinstance(error, commands.CommandsNotFound):
+            pass
+
+        else:
             embed = discord.Embed(
                                   title='⛔Error!',
                                   description=f"Sorry {ctx.author.mention}, but {self.client.user.name} found an error.",
