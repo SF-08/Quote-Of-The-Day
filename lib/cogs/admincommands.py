@@ -117,3 +117,11 @@ async def unban(self, ctx, member: discord.Member, *, reason=None):
     embed.set_footer(text=f"{ctx.guild.name}", icon_url=ctx.guild.icon_url)
     await ctx.send(embed=embed)
     await member.send(embed=embed)
+
+    @commands.Cog.listener()
+    async def on_ready(self):
+        if not self.client.ready:
+            self.client.cogs_ready.ready_up('admincommands')
+
+def setup(client):
+    client.add_cog(admincommands(client))
