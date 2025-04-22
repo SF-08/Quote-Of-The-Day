@@ -49,3 +49,18 @@ async def clear(self, ctx, amount=6):
     await ctx.channel.purge(limit=amount)
     await ctx.send(embed=embed, delete_after=5.0)
 
+@commands.command()
+@commands.guild_only()
+@commands.has_permissions(kick_members=True)
+@commands.cooldown(1, 8, commands.BucketType.user)
+async def kick(self, ctx, member: discord.Member, *, reason=None):
+    """Kicks members from the server // However they can still join back."""
+
+    embed = discord.Embed(
+        title='👟 Kick users.',
+        description='QOTD Bot will kick a specific member of the server.',
+        colour=ctx.author.colour,
+        timestamp=ctx.message.created_at
+    )
+
+    embed.add_field(name='Kicked User:', value=f"'{member.name}#{member.discriminator}\nID:{}'")
