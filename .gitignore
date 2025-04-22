@@ -1,1 +1,8 @@
+__pycache__
+*.pyc
+token.0
+*.json
+*.db
+*.db-journal
+
 API_KEY = 'FluhDZD6X6oma/hSonCUgw==uwwveVAk5nLp1UDA'
