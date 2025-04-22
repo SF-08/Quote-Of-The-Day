@@ -86,7 +86,7 @@ async def ban(self, ctx, member: discord.Member, *, reason=None):
         timestamp=ctx.message.created_at
     )
 
-    embed.add_field(name='Banned User:', value=f"'{member.name}#{member.discriminator}\nID:{member.id}'" inline=False)
+    embed.add_field(name='Banned Member:', value=f"`{member.name}#{member.discriminator}\nID:{member.id}`", inline=False)
     embed.add_field(name='Punisher:', value=f"'{ctx.message.author.name}#{ctx.message.author.discriminator}\nID:{ctx.message.author.id}'", inline=False)
     embed.add_field(name='Reason:', value=f"'{reason}'")
     embed.set_thumbnail(url='https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnUxcTJnMWlrbjZjYmUyeWJqcDRpaG40dGJ4bTI1c2EzbHo3NDNxbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qPD4yGsrc0pdm/giphy.gif')
@@ -103,13 +103,13 @@ async def unban(self, ctx, member: discord.Member, *, reason=None):
     """Unbans a member from the server."""
 
     embed = discord.Embed(
-        title='',
+        title='😅 Unban User',
         description='QOTD Bot will unban a specific member of the server.'
         colour=ctx.author.colour,
         timestamp=ctx.message.created_at
     )
 
-    embed.add_field(name='Unbanned User:', value=f"'{member.user}\nID:{member.user.id}'" inline=False)
+    embed.add_field(name='Unbanned Member:', value=f"`{member.user}\nID:{member.user.id}`", inline=False)
     embed.add_field(name='Unbanned By:', value=f"'{ctx.message.author.name}#{ctx.message.author.discriminator}\nID:{ctx.message.author.id}'", inline=False)
     embed.add_field(name='Reason:', value=f"'{reason}'", inline=False)
     embed.set_thumbnail(url='https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2s5YmVhcWQ2dTVzcjJzeWwwNzUweTJuOWRtZDhkZDJlaTVtM3BpNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l1J9urAfGd3grKV6E/giphy.gif')
