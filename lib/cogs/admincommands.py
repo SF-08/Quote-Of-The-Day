@@ -40,4 +40,12 @@ async def clear(self, ctx, amount=6):
         timestamp=ctx.message.created_at
     )
 
-    
+    embed.set_author(
+        name=f"{ctx.message.author.name} #{ctx.message.author.discriminator}",
+        icon_url=ctx.message.author.avatar_url
+    )
+
+    await ctx.message.delete()
+    await ctx.channel.purge(limit=amount)
+    await ctx.send(embed=embed, delete_after=5.0)
+
