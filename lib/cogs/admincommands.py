@@ -69,3 +69,5 @@ async def kick(self, ctx, member: discord.Member, *, reason=None):
     embed.set_thumbnail(url='https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGR1aWkzdmFocmljc2tpenN6YjRqNjl0c2d4cmpxd3FqZjIzaHlkaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LICtqQ1K8ClIQ/giphy.gif')
     embed.set_author(name=f"{member.name}#{member.discriminator}", icon_url=member.avatar_url)
     embed.set_footer(text=f"{ctx.guild.name}", icon_url=ctx.guild.icon_url)
+    await ctx.send(embed=embed)
+    await member.send(embed=embed)
