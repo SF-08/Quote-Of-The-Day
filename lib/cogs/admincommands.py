@@ -102,6 +102,7 @@ async def ban(self, ctx, member: discord.Member, *, reason=None):
 async def unban(self, ctx, member: discord.Member, *, reason=None):
     """Unbans a member from the server."""
 
+    await ctx.guild.unban(member.user, reason=reason)
     embed = discord.Embed(
         title='😅 Unban User',
         description='QOTD Bot will unban a specific member of the server.'
