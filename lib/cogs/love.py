@@ -1,5 +1,5 @@
 import discord
-from disord.ext import commands
+from discord.ext import commands
 
 import random
 from aiohttp import request

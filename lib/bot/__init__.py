@@ -5,6 +5,7 @@ from discord.ext.commands import Bot
 from asyncio import sleep, get_event_loop
 from apschedular.schedulers.asyncio import AsyncIDSchedular
 from discord.ext.commands import when_mentioned_or, CooldownMapping, BucketType
+import Pylance
 
 #Builtin Modules
 from glob import glob
@@ -115,16 +116,11 @@ async def on_ready():
     with open(BUILD_PATH, 'r', encoding='utf-8') as script:
 	    await cur.executescript(script.read())
     
-    client.scheduler.start()
+client.scheduler.start()
 
-    status_channel = client.get_channel(CHANNEL ID NEEDS TO BE ADDED)
-    await status_channel.send(':wave: Hello everyone! I\'m back online!')
 
-    while not client.cogs_ready.all_ready():
-        await sleep(0.5)
-    print(f"Your bot is online and ready to go!")
-    client.ready = True
-    client.scheduler.start()
+status_channel = client.get_channel()
+await status_channel.send(':wave: Boop Boop I\'m` back online!')
 
-    meta = client.get_cog('Meta')
-    await meta.set()
+while not client.cogs_ready.all_ready():
+    await sleep(0.5)
