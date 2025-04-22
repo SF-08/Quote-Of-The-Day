@@ -27,3 +27,9 @@ class admincommands(commands.Cog):
         
 
 
+@commands.command(aliases=['delete', 'purge'])
+@commands.guild_only()
+@commands.has_permissions(manage_messages=True)
+@commands.cooldown(1, 8, commands.BucketType.user)
+async def clear(self, ctx, amount=6):
+    """Deletes messages in a channel."""
