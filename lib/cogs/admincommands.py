@@ -94,3 +94,26 @@ async def ban(self, ctx, member: discord.Member, *, reason=None):
     embed.set_footer(text=f"{ctx.guild.name}", icon_url=ctx.guild.icon_url)
     await ctx.send(embed=embed)
     await member.send(embed=embed)
+
+@commands.command()
+@commands.guild_only()
+@commands.has_permissions(ban_members=True)
+@commands.cooldown(1, 8, commands.BucketType.user)
+async def unban(self, ctx, member: discord.Member, *, reason=None):
+    """Unbans a member from the server."""
+
+    embed = discord.Embed(
+        title='',
+        description='QOTD Bot will unban a specific member of the server.'
+        colour=ctx.author.colour,
+        timestamp=ctx.message.created_at
+    )
+
+    embed.add_field(name='Unbanned User:', value=f"'{member.user}\nID:{member.user.id}'" inline=False)
+    embed.add_field(name='Unbanned By:', value=f"'{ctx.message.author.name}#{ctx.message.author.discriminator}\nID:{ctx.message.author.id}'", inline=False)
+    embed.add_field(name='Reason:', value=f"'{reason}'", inline=False)
+    embed.set_thumbnail(url='https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2s5YmVhcWQ2dTVzcjJzeWwwNzUweTJuOWRtZDhkZDJlaTVtM3BpNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l1J9urAfGd3grKV6E/giphy.gif')
+    embed.set_author(name=f"{member.user}")
+    embed.set_footer(text=f"{ctx.guild.name}", icon_url=ctx.guild.icon_url)
+    await ctx.send(embed=embed)
+    await member.send(embed=embed)
