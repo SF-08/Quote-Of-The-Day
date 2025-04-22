@@ -33,3 +33,11 @@ class admincommands(commands.Cog):
 @commands.cooldown(1, 8, commands.BucketType.user)
 async def clear(self, ctx, amount=6):
     """Deletes messages in a channel."""
+
+    embed = discord.Embed(
+        description=f"Deleted {amount} messages.",
+        colour=ctx.message.author.colour,
+        timestamp=ctx.message.created_at
+    )
+
+    
