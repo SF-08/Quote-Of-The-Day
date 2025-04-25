@@ -30,6 +30,23 @@ class quotes(commands.Cog):
 
         await ctx.send(random.choice(love_quotes))
 
+    @commands.command()
+    async def inspirational(self, ctx):
+        inspirational_quotes = [
+            'QUOTES'
+            'QUOTES'
+            'QUOTES'
+            'QUOTES'
+            'QUOTES'
+            'QUOTES'
+            'QUOTES'
+            'QUOTES'
+            'QUOTES'
+            'QUOTES'
+            'QUOTES'
+        ]
+
+        await ctx.send(random.choice(inspirational_quotes))
 
 
 # Cog Setup
