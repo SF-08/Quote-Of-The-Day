@@ -25,12 +25,10 @@ class quotes(commands.Cog):
             "Love is not only something you feel, it is something you do. - David Wilkerson",
             "We loved with a love that was more than love. - Edgar Allan Poe",
             "Love is a friendship set to music. - Joseph Campbell",
-            
+
         ]
 
         await ctx.send(random.choice(love_quotes))
-
-
 
 
 
