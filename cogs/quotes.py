@@ -84,7 +84,7 @@ class quotes(commands.Cog):
 
         await ctx.send(random.choice(sad_quotes))
 
-    @commands.command()
+    @commands.command
     async def motivational(self, ctx):
         motivational_quotes = [
             'QUOTES'
